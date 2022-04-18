@@ -1,0 +1,55 @@
+.header {
+  border-bottom: 1px solid var(--gray-700);
+}
+
+.headerContainer {
+  max-width: 1110px;
+  margin: 0 auto;
+  width: 90%;
+  height: 5rem;
+
+  display: flex;
+  align-items: center;
+
+  nav {
+    margin-left: 5rem;
+
+    a {
+      position: relative;
+      display: inline-block;
+      padding: 0.5rem;
+      color: var(--gray-300);
+
+      transition: color ease 0.3s;
+
+      & + a {
+        margin-left: 2rem;
+      }
+
+      &:hover {
+        color: var(--white);
+      }
+
+      &.active {
+        color: var(--white);
+        font-weight: bold;
+      }
+
+      &.active::after {
+        content: '';
+        position: absolute;
+        bottom: -1.5rem;
+        left: 0;
+
+        width: 100%;
+        height: 3px;
+        border-radius: 0.25rem 0.25rem 0 0;
+        background-color: var(--yellow-500);
+      }
+    }
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
